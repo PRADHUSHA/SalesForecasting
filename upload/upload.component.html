@@ -1,0 +1,159 @@
+
+<!-- <html>
+<H1>Upload your file here</H1>
+
+<mat-card class="card">
+    <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+      <ngx-dropzone (change)="onSelect($event)">
+        <mat-card-header>
+          <ngx-dropzone-label>Drag and drop your files here</ngx-dropzone-label>
+        </mat-card-header>
+  
+        <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+          <mat-card-subtitle>
+            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+          </mat-card-subtitle>
+        </ngx-dropzone-preview>
+      </ngx-dropzone>
+      <button type="submit" (ngSubmit)="onSubmit()">Upload</button>
+    </form>
+    <div *ngIf="response">
+      {{ response.message }} {{ response.data }}
+    </div>
+</mat-card>
+
+<form #myForm="ngForm" (ngSubmit)="onPredict()">
+  <label for="month">DAY:</label>
+  <input type="number" name="month" id="month">
+  <br>  
+
+  <label for="pid">PRODUCT ID(1-5):</label>
+  <input type="number" name="pid" id="pid" [(ngModel)]="formData.pid" required>
+  <br>
+
+  <label for="month">MONTH:</label>
+  <input type="number" name="month" id="month" [(ngModel)]="formData.month" required>
+  <br>
+
+  <label for="year">YEAR:</label>
+  <input type="number" name="year" id="year" [(ngModel)]="formData.year" required>
+  <br>
+
+  <button type="submit">Predict</button>
+
+
+</form>
+<div class = "hell">
+  <div *ngIf="response">Prediction: <br>
+    Sales rate: {{ response | json }}
+  </div></div>
+</html>
+
+   -->
+
+   <div class="body">
+
+    <div class="container">
+      <input type="checkbox" id="flip">
+      <div class="cover">
+        <div class="front">
+  
+          <div class="text">
+            <span class="text-1">Every new upload is a <br> new beginning</span>
+            <span class="text-2">Let's upload</span>
+          </div>
+        </div>
+        <div class="back">
+  
+          <div class="text">
+            <span class="text-1">Complete miles of journey <br> with one step</span>
+            <span class="text-2">Let's predict</span>
+          </div>
+        </div>
+      </div>
+      <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">File Upload</div>
+            <form action="#">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <mat-card class="card">
+                    <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                      <ngx-dropzone (change)="onSelect($event)">
+                        <mat-card-header>
+                          <ngx-dropzone-label>Drag and drop your files here</ngx-dropzone-label>
+                        </mat-card-header>
+  
+                        <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                          <mat-card-subtitle>
+                            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                          </mat-card-subtitle>
+                        </ngx-dropzone-preview>
+                      </ngx-dropzone>
+  
+                      <div class="button input-box">
+                        <input type="submit" (ngSubmit)="onSubmit()" value="Upload">
+                      </div>
+                    </form>
+                    <div *ngIf="response">
+                      {{ response.message }} {{ response.data }}
+                    </div>
+                  </mat-card>
+                </div>
+                <br><br><br><br>
+                <br>
+  
+  
+  
+  
+                <div class="predict-text">Click for prediction <label for="flip">Predict</label></div>
+              </div>
+            </form>
+          </div>
+          <div class="predict">
+            <div class="title">Prediction</div>
+            <form #myForm="ngForm" (ngSubmit)="onPredict()">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  <label for="month">DAY:</label>
+                  <input type="number" name="month" id="month">
+                  <br>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <label for="pid">PRODUCT ID(1-5):</label>
+                  <input type="number" name="pid" id="pid" [(ngModel)]="formData.pid" required>
+                  <br>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <label for="month">MONTH:</label>
+                  <input type="number" name="month" id="month" [(ngModel)]="formData.month" required>
+                  <br>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <label for="year">YEAR:</label>
+                  <input type="number" name="year" id="year" [(ngModel)]="formData.year" required>
+                  <br>
+                </div>
+  
+                <div class="button input-box">
+                  <input type="submit" value="Predict">
+                </div>
+                <div class="predict-text">Do you want to return to <label for="flip">File Upload</label></div>
+              </div>
+            </form>
+            <div class="hell">
+              <div *ngIf="response">Prediction: <br>
+                Sales rate: {{ response | json }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
